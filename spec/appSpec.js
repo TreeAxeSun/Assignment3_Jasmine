@@ -39,9 +39,10 @@ describe("App", () => {
 
       const computer = new Computer();
       it("can install a program if there is sufficient space", () => {
-        expect(computer.hardDriveSpace).toBe(312)
+        expect(computer.hardDriveSpace).toBe(412)
       })
 
+    describe("can't installProgram", () => {
       beforeEach(function (done) {
         computer.installProgram(600, function () {
           done();
@@ -49,10 +50,13 @@ describe("App", () => {
       })
       it("will not install the program if there is insufficient space", () => {
 
-        expect(computer.hardDriveSpace).toBe(412)
+        expect(computer.hardDriveSpace).toBe(312)
       })
 
     })
+
+    })
+     
 
 
     describe("format", () => {
